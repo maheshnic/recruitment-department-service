@@ -1,0 +1,54 @@
+# This port is dedicated specifically for the Users service
+server:
+  port: 8080
+
+# Database Configuration
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update # for production ready make it to validate or none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  # Giving application name
+  application:
+    name: DEPARTMENT-SERVICE
+
+# Logging Level Configuration
+logging:
+  level:
+    org.springframework: INFO
+    com.recruitment: DEBUG
+    org.springframework.web.multipart: DEBUG
+    org.apache.coyote.http11: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+# Eureka Configuration for Discovery Client
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: department-service
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://naming-server:8761/eureka
+
+springdoc:
+  default-produces-media-type: application/json
+  writer-with-default-pretty-printer: true
+  api-docs:
+    version: openapi_3_0
+
+# Important URL
+api:
+  gateway:
+    url: ${API_GATEWAY_URL}
