@@ -14,7 +14,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/master")
+@RequestMapping("/api/v1/recruiter/master/")
 @Tag(name = "Department Master Controller")
 public class MasterController {
 
