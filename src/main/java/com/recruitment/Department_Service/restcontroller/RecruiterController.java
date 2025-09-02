@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/recruiter")
+@RequestMapping("/api/v1/recruiter")
 @Tag(name = "Recruiter Controller")
 public class RecruiterController {
 

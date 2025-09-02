@@ -49,6 +49,6 @@ springdoc:
     version: openapi_3_0
 
 # Important URL
-api:
+security:
   gateway:
-    url: ${API_GATEWAY_URL}
+    url: ${SECURITY_GATEWAY_URL}
