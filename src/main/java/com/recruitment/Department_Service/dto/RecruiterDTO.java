@@ -9,9 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DepartmentDto {
-    private String userId;
-    private String departmentName;
+public class RecruiterDTO {
+    private Long userId;
+    private String recruiterId;
+    private Long departmentId;
     private String headOfDepartment;
-    private String ministryName;
+    private String designationOfHead;
 }
